@@ -73,29 +73,11 @@ class FastqSamplerMain:
         self.seed_table = seed_table
         return seed_table
 
-    # https://stackoverflow.com/a/9816863
-    def absoluteFilePaths(self, directory):
-        for dirpath, _, filenames in os.walk(directory):
-            for f in filenames:
-                yield os.path.abspath(os.path.join(dirpath, f))
-
-    def get_raw_files(self, Input_dir):
-        raw_files = list()
-        for Input_dir_l in Input_dir:
-            raw_files_l = self.absoluteFilePaths(Input_dir_l)
-            raw_files += raw_files_l
-        return raw_files
-
-   
     def get_sample_file_dict(self):
 
         indir = self.indir
         lsuffix = self.file_suffix
         sample_file_dict = dict()
-
-        #print("File list start: ")
-        #raw_files = self.get_raw_files(indir)
-        #print("File list end: ")
 
         sample_set = self.sample_set
 
