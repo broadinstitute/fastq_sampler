@@ -1,0 +1,6 @@
+This package allows random sampling of reads from a set of fastq files with a user defined number of reads to subsample. For random sampling, reproducible random seeds are generated, the reads of the fastq file are shuffled using those seeds and top reads are collected according to the depth requirement.
+
+This tool is written in C++ and python. The starting point of the program is a python script called FastqSampler.py which can be executed as follows:
+
+FastqSampler.py --count_file <input file containing the counts> --indir <input fastq directory> --outdir <project outdir>
+
